@@ -4,33 +4,27 @@ const alfredUserSchema = new mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     name: {
         type: String,
-        max: 20,
         requried: true
     },
     email: {
         type: String,
-        max: 20,
         requried: true
     },
     password: {
         type: String,
-        min: 6,
         requried: true
     },
     phoneNumber: {
-        type: Number,
-        min: 10,
-        max: 10,
+        type: String,
         requried: true
     },
     city: {
         type: String,
-        max: 20,
-        default: ""
+        default: "",
+        required: true
     },
     address: {
         type: String,
-        max: 150,
         default: ""
     },
     services: {
@@ -42,4 +36,4 @@ const alfredUserSchema = new mongoose.Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model('User', alfredUserSchema)
+module.exports = mongoose.model('AlfredUser', alfredUserSchema)
